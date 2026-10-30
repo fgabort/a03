@@ -1,0 +1,13 @@
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: firstwf
+  labels:
+    app.kubernetes.io/name: firstwf
+    app.kubernetes.io/part-of: firstwf-project
+    kubernetes.azure.com/generator: devhub
+spec:
+  maxUnavailable: 1
+  selector:
+    matchLabels:
+      app: firstwf

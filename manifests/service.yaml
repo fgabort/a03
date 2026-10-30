@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: firstwf
+  namespace: namespace-workflow-1793393030816
+  labels:
+    app.kubernetes.io/name: firstwf
+    kubernetes.azure.com/generator: devhub
+spec:
+  type: LoadBalancer
+  selector:
+    app.kubernetes.io/name: firstwf
+  ports:
+    - protocol: TCP
+      port: 8000
+      targetPort: 8000
